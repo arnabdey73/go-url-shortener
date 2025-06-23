@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: url-shortener
+  namespace: url-shortener
+  labels:
+    app: url-shortener
+    app.kubernetes.io/name: url-shortener
+    app.kubernetes.io/part-of: single-node-gitops
+spec:
+  selector:
+    matchLabels:
+      app: url-shortener
+  endpoints:
+  - port: http
+    interval: 30s
+    path: /metrics

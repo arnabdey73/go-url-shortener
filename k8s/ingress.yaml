@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: url-shortener
+  namespace: url-shortener
+  labels:
+    app: url-shortener
+    app.kubernetes.io/name: url-shortener
+    app.kubernetes.io/part-of: single-node-gitops
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: url.your-server-ip.nip.io  # Replace with your server IP using nip.io for automatic DNS resolution
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: url-shortener
+            port:
+              number: 80
