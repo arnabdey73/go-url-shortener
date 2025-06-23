@@ -52,9 +52,11 @@ go-url-shortener/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/go-url-shortener.git
+git clone https://github.com/YOUR_USERNAME/go-url-shortener.git
 cd go-url-shortener
 ```
+
+Replace `YOUR_USERNAME` with your GitHub username.
 
 1. Run with in-memory storage:
 
@@ -85,15 +87,17 @@ make run-sqlite
 Clone this repository to your GitOps server:
 
 ```bash
-git clone https://github.com/your-username/go-url-shortener.git
+git clone https://github.com/YOUR_USERNAME/go-url-shortener.git
 cd go-url-shortener
 ```
+
+Replace `YOUR_USERNAME` with your GitHub username.
 
 Update the configuration with your server IP and Git repository URL:
 
 ```bash
 chmod +x scripts/*.sh
-./scripts/update-config.sh "your-server-ip" "https://github.com/your-username/go-url-shortener.git"
+./scripts/update-config.sh "your-server-ip" "https://github.com/YOUR_USERNAME/go-url-shortener.git"
 ```
 
 ### 2. Build and Push Docker Image
